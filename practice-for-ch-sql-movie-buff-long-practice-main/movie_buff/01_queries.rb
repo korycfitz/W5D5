@@ -44,7 +44,7 @@ def biggest_cast
   # actors).
   Movie
     .select("movies.id", "movies.title")
-    .joins("movies.castings")
+    .joins(:castings)
     .group("movies.id")
     .order("COUNT(movies.id) DESC") 
     #count referring to movie id 
